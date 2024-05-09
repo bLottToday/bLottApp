@@ -34,8 +34,9 @@ const ListScreen = () => {
       perPage={25}
       sort={{ field: "createdAt", order: "desc" }}
       hasCreate={false}
-      resource="audittxs"
+      resource="dapptxs"
       filters={filters}
+      filter={{ isLockSuccess: true }}
     >
       <Datagrid bulkActionButtons={false}>
         <TextField source="lockAddress" />

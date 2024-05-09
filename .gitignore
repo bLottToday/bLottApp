@@ -9,6 +9,7 @@ node_modules
 **/auth
 **/flatworks
 **/components
+**/i18n
 packages
 test
 

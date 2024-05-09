@@ -70,7 +70,7 @@ const Menu = ({ dense = false }: MenuProps) => {
         />
 
         <MenuItemLink
-          to="/scontractreports"
+          to="/dapptxs"
           state={{ _scrollToTop: true }}
           primaryText={"Prize results"}
           leftIcon={<NotesIcon />}
@@ -78,7 +78,7 @@ const Menu = ({ dense = false }: MenuProps) => {
         />
 
         <MenuItemLink
-          to="/queues"
+          to="/dapptxs"
           state={{ _scrollToTop: true }}
           primaryText="Prize transferred TXs"
           leftIcon={<FormatIndentIncreaseIcon />}
@@ -95,12 +95,12 @@ const Menu = ({ dense = false }: MenuProps) => {
       <SubMenu
         handleToggle={() => handleToggle("tools")}
         isOpen={state.tools}
-        name="pos.menu.tools"
+        name="Tools"
         icon={<DeselectIcon />}
         dense={dense}
       >
         <MenuItemLink
-          to="/auditcontract"
+          to="/dapptxs"
           state={{ _scrollToTop: true }}
           primaryText="Find potential tickets"
           leftIcon={<DoneAllIcon />}
@@ -108,7 +108,7 @@ const Menu = ({ dense = false }: MenuProps) => {
         />
 
         <MenuItemLink
-          to="/fetchCardano"
+          to="/dapptxs"
           state={{ _scrollToTop: true }}
           primaryText="Your ROI"
           leftIcon={<NotesIcon />}
@@ -118,12 +118,12 @@ const Menu = ({ dense = false }: MenuProps) => {
       <SubMenu
         handleToggle={() => handleToggle("tools")}
         isOpen={state.tools}
-        name="Tools"
+        name="Settings"
         icon={<ConstructionIcon />}
         dense={dense}
       >
         <MenuItemLink
-          to="/changePassword"
+          to="/dapptxs"
           state={{ _scrollToTop: true }}
           primaryText="Change wallet"
           leftIcon={<PeopleOutlinedIcon />}
