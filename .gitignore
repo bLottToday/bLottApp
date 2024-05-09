@@ -14,5 +14,5 @@ test
 
 
 # ignore database & certificates
-
+docker-configs
 docker-dev
