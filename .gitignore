@@ -12,7 +12,7 @@ node_modules
 packages
 test
 
-# ignore database & certificates
-docker-config
-docker-dev
 
+# ignore database & certificates
+
+docker-dev
