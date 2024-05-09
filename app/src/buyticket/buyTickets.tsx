@@ -2,10 +2,14 @@ import React from "react";
 import SmartContractAudit from "../components/contractLockUnlock";
 import { SelectChangeEvent } from "@mui/material/Select";
 import Box from "@mui/material/Box";
-import { CardanoWallet, useWallet } from "@meshsdk/react";
-import { Transaction, Data, KoiosProvider } from "@meshsdk/core";
-import { useCreate, useUpdate } from "react-admin";
-import { script, scriptAddrMainnet } from "./sampleContract";
+import {
+  CardanoWallet,
+  useWallet,
+  Transaction,
+  Data,
+} from "../components/utils";
+import { useCreate } from "react-admin";
+import { script, scriptAddrMainnet } from "../components/sampleContract";
 
 const SmartContracts = () => {
   const [amountToLock, setAmountToLock] = React.useState(0);
@@ -18,9 +22,6 @@ const SmartContracts = () => {
     setSelectedTickets(typeof value === "string" ? value.split(",") : value);
     setAmountToLock(5 * value.length);
   };
-
-  const isMainnet = process.env.REACT_APP_IS_MAINNET;
-  const cardanoNetwork = isMainnet ? "api" : "preprod";
 
   const [create, { isLoading, error }] = useCreate();
 
@@ -50,8 +51,6 @@ const SmartContracts = () => {
   };
 
   const lockFunction = async () => {
-    //get PlutusScript & its address
-
     const validateMessage = !scriptAddrMainnet
       ? "No smart contract address, please select a smart contract"
       : !wallet || !connected
@@ -96,7 +95,7 @@ const SmartContracts = () => {
           ...notification,
           message: "Transaction is failed",
         });
-        create("audittxs", {
+        create("dapptxs", {
           data: {
             amount: amountToLock,
             scriptAddress: scriptAddrMainnet,
@@ -113,7 +112,7 @@ const SmartContracts = () => {
         ...notification,
         message: txHash ? `Transaction is submmited: ${txHash}` : null,
       });
-      create("audittxs", {
+      create("dapptxs", {
         data: {
           amount: amountToLock,
           scriptAddress: scriptAddrMainnet,
